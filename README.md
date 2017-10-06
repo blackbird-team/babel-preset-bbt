@@ -6,6 +6,7 @@ Babel preset used by BlackBird Team
 npm install --save-dev babel-core babel-preset-bbt
 ```
 
+Contains peer dependencies: [babel-core](https://www.npmjs.com/package/babel-core) version [6.26.0](https://github.com/babel/babel/releases/tag/v6.26.0)
 ```cmd
 npm i -D babel-preset-bbt
 ```
@@ -13,6 +14,7 @@ npm i -D babel-preset-bbt
 ## Usage
 
 Without options:
+
 ```
 {
   "presets": ["bbt"]
@@ -20,6 +22,7 @@ Without options:
 ```
 
 or with: 
+
 ```
 {
   "presets": [
