@@ -15,95 +15,30 @@ npm i -D babel-preset-bbt
 Without options:
 ```
 {
-	"presets": ["bbt"]
+  "presets": ["bbt"]
 }
 ```
 
 or with: 
 ```
 {
-	"presets": [
-	    ["bbt", options]
-    ]
+  "presets": [
+    ["bbt", options]
+  ]
 }
 ```
 
 ## Options
 
-- ```react``` - Enable react preset
+- ```react``` - Enable react preset. _default:_ ```false``` 
 
-_default:_ ```fasle``` 
-
-- ```minify``` - Enable minification
-
- _default:_ ```fasle```
+- ```minify``` - Enable minification. _default:_ ```false```
  
 - ```targets``` - You may override our default list of targets by providing your own targets
+[More about targets](/docs/targets.md)
 
-_default:_ 
-```
-{
-    android: 30,
-    chrome: 35,
-    edge: 14,
-    explorer: 9,
-    firefox: 52,
-    safari: 8,
-    ucandroid: 1
-}                             
-```
-Example providing:
-```
-{
-	"presets": [
-	    ["bbt", {
-	        "targets": {
-                  "node": true
-                }
-	    }]
-    ]
-}
-    
-```
-
-[More about env](https://github.com/babel/babel-preset-env#targets)
-
-- ```roots``` - 
-
-_default:_ 
-```
-[
-	{
-		rootPathPrefix: "~",
-		rootPathSuffix: "source/js"
-	},
-	{
-		rootPathPrefix: "@",
-		rootPathSuffix: "source/data"
-	}
-]                            
-```
-Example providing:
-```
-{
-  "presets" : [
-    ["bbt",
-      {
-        "roots": [
-          {
-            "rootPathPrefix": "~", "rootPathSuffix": "src/js"
-          },
-          {
-            "rootPathPrefix": "@", "rootPathSuffix": "src/data"
-          }
-        ]
-      }
-    ]
-  ]
-}  
-```
-
-[More about roots](https://github.com/entwicklerstube/babel-plugin-root-import)
+- ```roots``` - You can supply an array of the above. The plugin will try each prefix/suffix pair in the order they are defined.
+[More about roots](/docs/roots.md)
 
 ## Includes
 
@@ -111,5 +46,5 @@ Example providing:
 [babel-preset-react](https://github.com/babel/babel/tree/master/packages/babel-preset-react)\
 [babel-preset-minify](https://github.com/babel/minify/tree/master/packages/babel-preset-minify)
 
-[babel-plugin-root-import](https://github.com/entwicklerstube/babel-plugin-root-import)
+[babel-plugin-root-import](https://github.com/entwicklerstube/babel-plugin-root-import)\
 [babel-plugin-transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties/)
