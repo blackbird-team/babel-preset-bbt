@@ -33,8 +33,6 @@ or with:
 
 ## Options
 
-### Common
-
 - ```lang``` - Choose language: ```js``` or ```ts```. _default:_ ```ts``` 
 
 - ```targets``` - You may override our default list of targets by providing your own targets
@@ -43,8 +41,6 @@ or with:
 - ```env``` - Provide options for ```preset-env```. 
 
 __CAUTIONS__ ```options.env.targets``` will overrides from ```options.targets``` if ```options.targets != undefined```
-
-### For Javascript
 
 - ```react``` - Enable react preset. _default:_ ```false``` 
 
@@ -57,13 +53,11 @@ __CAUTIONS__ ```options.env.targets``` will overrides from ```options.targets```
 
 ### Common
 [preset-env](https://babeljs.io/docs/en/babel-preset-env)\
-[plugin-proposal-class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties/)
-
-### For Javascript
 [preset-react](https://github.com/babel/babel/tree/master/packages/babel-preset-react)\
 [preset-minify](https://github.com/babel/minify/tree/master/packages/babel-preset-minify)
 
-[plugin-root-import](https://github.com/entwicklerstube/babel-plugin-root-import)
+[plugin-root-import](https://github.com/entwicklerstube/babel-plugin-root-import)\
+[plugin-proposal-class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties/)
 
 ### For Typescript
 [preset-typescript](https://babeljs.io/docs/en/babel-preset-typescript)\
