@@ -1,8 +1,10 @@
-import transformClassProperties from "babel-plugin-transform-class-properties";
+import transformClassProperties from "@babel/plugin-proposal-class-properties";
+import proposalObjectRestSspread from "@babel/plugin-proposal-object-rest-spread";
 import rootImport from "babel-plugin-root-import";
 import reactPreset from "babel-preset-react";
 import minifyPreset from "babel-preset-minify";
-import envPreset from "babel-preset-env";
+import envPreset from "@babel/preset-env";
+import tsPreset from "@babel/preset-typescript";
 
 const defaultTargets = {
 	android: 30,
@@ -39,10 +41,22 @@ const collectPresets = options => {
 	return presets;
 };
 
-export default (context, options) => ({
+const collectJs = options => ({
 	presets: collectPresets(options),
-	plugins: [
-		[transformClassProperties],
-		[rootImport, (options && options.roots) || defaultRoots]
-	]
+	plugins: [[transformClassProperties], [rootImport, (options && options.roots) || defaultRoots]]
 });
+
+const collectTs = options => ({
+	presets: [
+		tsPreset,
+		[
+			envPreset,
+			{
+				targets: (options && options.targets) || defaultTargets
+			}
+		]
+	],
+	plugins: [[transformClassProperties], [proposalObjectRestSspread]]
+});
+
+export default (context, options) => (options && options.lang === "js" ? collectJs(options) : collectTs(options));
