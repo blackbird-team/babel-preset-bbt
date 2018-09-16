@@ -1,10 +1,10 @@
-import transformClassProperties from "@babel/plugin-proposal-class-properties";
-import proposalObjectRestSspread from "@babel/plugin-proposal-object-rest-spread";
-import rootImport from "babel-plugin-root-import";
+import envPreset from "@babel/preset-env";
 import reactPreset from "babel-preset-react";
 import minifyPreset from "babel-preset-minify";
-import envPreset from "@babel/preset-env";
+import rootImport from "babel-plugin-root-import";
 import tsPreset from "@babel/preset-typescript";
+import transformClassProperties from "@babel/plugin-proposal-class-properties";
+import proposalObjectRestSspread from "@babel/plugin-proposal-object-rest-spread";
 
 const defaultTargets = {
 	android: 30,
@@ -27,16 +27,21 @@ const defaultRoots = [
 	}
 ];
 
+const env = options => {
+	let opt = {};
+
+	if (options && options.env) opt = options.env;
+	if (options && options.targets) opt.targets = options.targets;
+	else opt.targets = defaultTargets;
+
+	return [envPreset, opt];
+};
+
 const collectPresets = options => {
 	const presets = [];
 	if (options.minify) presets.push(minifyPreset);
 	if (options.react) presets.push(reactPreset);
-	presets.push([
-		envPreset,
-		{
-			targets: (options && options.targets) || defaultTargets
-		}
-	]);
+	presets.push(env(options));
 
 	return presets;
 };
@@ -47,15 +52,7 @@ const collectJs = options => ({
 });
 
 const collectTs = options => ({
-	presets: [
-		tsPreset,
-		[
-			envPreset,
-			{
-				targets: (options && options.targets) || defaultTargets
-			}
-		]
-	],
+	presets: [tsPreset, env(options)],
 	plugins: [[transformClassProperties], [proposalObjectRestSspread]]
 });
 
