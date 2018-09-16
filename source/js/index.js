@@ -52,7 +52,7 @@ const collectJs = options => ({
 });
 
 const collectTs = options => ({
-	presets: [tsPreset, env(options)],
+	presets: [tsPreset, ...collectPresets(options)],
 	plugins: [[transformClassProperties], [proposalObjectRestSspread]]
 });
 
