@@ -56,4 +56,9 @@ const collectTs = options => ({
 	plugins: [[transformClassProperties], [proposalObjectRestSspread]]
 });
 
-export default (context, options) => (options && options.lang === "js" ? collectJs(options) : collectTs(options));
+const getSettings = options => {
+	const lang = options && options.lang;
+	return lang === "ts" ? collectTs(options) : collectJs(options);
+};
+
+export default (context, options) => getSettings(options);
