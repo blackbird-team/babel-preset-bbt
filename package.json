@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-bbt",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Babel preset used by BlackBird Team",
   "main": "build/index.js",
   "scripts": {
@@ -24,23 +24,25 @@
   },
   "homepage": "https://github.com/blackbird-team/babel-preset-bbt#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "eslint": "^4.8.0",
-    "eslint-config-bbt": "^1.0.0",
-    "lint-staged": "^4.2.3",
-    "lodash": "^4.17.4",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "eslint": "^5.6.0",
+    "eslint-config-bbt": "^1.0.1",
+    "lint-staged": "^7.2.2",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.7.4"
+    "prettier": "^1.14.2"
   },
   "dependencies": {
-    "babel-plugin-root-import": "^5.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-typescript": "^7.0.0",
+    "babel-plugin-root-import": "^6.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-minify": "^0.2.0",
+    "babel-preset-minify": "^0.4.3",
     "babel-preset-react": "^6.24.1"
   },
   "peerDependencies": {
-    "babel-core": "^6.26.0"
+    "@babel/core": "^7.0.1"
   }
 }
