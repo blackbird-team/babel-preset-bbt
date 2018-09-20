@@ -33,7 +33,7 @@ or with:
 
 ## Options
 
-- ```lang``` - Choose language: ```js``` or ```ts```. _default:_ ```ts``` 
+- ```lang``` - Choose language: ```js``` or ```ts```. _default:_ ```js``` 
 
 - ```targets``` - You may override our default list of targets by providing your own targets
 [More about targets](/docs/targets.md)
