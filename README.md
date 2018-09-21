@@ -6,7 +6,7 @@ Babel preset used by BlackBird Team
 npm install --save-dev @babel/core babel-preset-bbt
 ```
 
-Contains peer dependencies: [@babel/core](https://www.npmjs.com/package/babel-core) version [7.0.1](https://github.com/babel/babel/releases/tag/v7.0.1)
+Contains peer dependencies: [@babel/core](https://www.npmjs.com/package/babel-core) version [7.*.*](https://github.com/babel/babel/releases/tag/v7.0.0)
 ```cmd
 npm i -D babel-preset-bbt
 ```
